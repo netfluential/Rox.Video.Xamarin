@@ -15,7 +15,6 @@ namespace RoxSample
         }
 
         private bool _AutoPlay = false;
-        //public bool SwitchAutoPlay
         public bool AutoPlay
         {
             get
@@ -27,22 +26,10 @@ namespace RoxSample
                 _AutoPlay = value;
 
                 OnPropertyChanged(nameof(AutoPlay));
-
-                //OnPropertyChanged(nameof(SwitchAutoPlay));
-                //OnPropertyChanged(nameof(VideoAutoPlay));
             }
         }
 
-        //public bool VideoAutoPlay
-        //{
-        //    get
-        //    {
-        //        return _AutoPlay;
-        //    }
-        //}
-
         private bool _LoopPlay = false;
-        //public bool SwitchLoopPlay
         public bool LoopPlay
         {
             get
@@ -54,22 +41,10 @@ namespace RoxSample
                 _LoopPlay = value;
 
                 OnPropertyChanged(nameof(LoopPlay));
-
-                //OnPropertyChanged(nameof(SwitchLoopPlay));
-                //OnPropertyChanged(nameof(VideoLoopPlay));
             }
         }
 
-        //public bool VideoLoopPlay
-        //{
-        //    get
-        //    {
-        //        return _LoopPlay;
-        //    }
-        //}
-
         private bool _ShowController = false;
-        //public bool SwitchShowController
         public bool ShowController
         {
             get
@@ -81,22 +56,10 @@ namespace RoxSample
                 _ShowController = value;
 
                 OnPropertyChanged(nameof(ShowController));
-
-                //OnPropertyChanged(nameof(SwitchShowController));
-                //OnPropertyChanged(nameof(VideoShowController));
             }
         }
 
-        //public bool VideoShowController
-        //{
-        //    get
-        //    {
-        //        return _ShowController;
-        //    }
-        //}
-
         private bool _Muted = false;
-        //public bool SwitchMuted
         public bool Muted
         {
             get
@@ -108,22 +71,10 @@ namespace RoxSample
                 _Muted = value;
 
                 OnPropertyChanged(nameof(Muted));
-
-                //OnPropertyChanged(nameof(SwitchMuted));
-                //OnPropertyChanged(nameof(VideoMuted));
             }
         }
 
-        //public bool VideoMuted
-        //{
-        //    get
-        //    {
-        //        return _Muted;
-        //    }
-        //}
-
         private double _Volume = 1;
-        //public double SliderVolume
         public double Volume
         {
             get
@@ -142,19 +93,8 @@ namespace RoxSample
                 }
 
                 OnPropertyChanged(nameof(Volume));
-
-                //OnPropertyChanged(nameof(SliderVolume));
-                //OnPropertyChanged(nameof(VideoVolume));
             }
         }
-
-        //public double VideoVolume
-        //{
-        //    get
-        //    {
-        //        return _Volume;
-        //    }
-        //}
 
         private string _LabelVideoStatus;
         public string LabelVideoStatus
