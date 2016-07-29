@@ -11,7 +11,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <roxv:VideoView Grid.Column="0" Grid.Row="0" x:Name="VideoView" AutoPlay="{Binding AutoPlay}" LoopPlay="{Binding LoopPlay}" Muted="{Binding Muted}" Volume="{Binding Volume}" ShowController="{Binding ShowController}" VideoSource="{Binding VideoSource}" PropertyChangedCommand="{Binding PropertyChangedCommand}" />
+        <roxv:VideoView Grid.Column="0" Grid.Row="0" x:Name="VideoView" AutoPlay="{Binding AutoPlay}" LoopPlay="{Binding LoopPlay}" Muted="{Binding Muted}" Volume="{Binding Volume}" ShowController="{Binding ShowController}" Source="{Binding VideoSource}" PropertyChangedCommand="{Binding PropertyChangedCommand}" />
         <StackLayout Grid.Column="0" Grid.Row="1">
             <Entry Text="{Binding EntrySource}" />
             <StackLayout Orientation="Horizontal">

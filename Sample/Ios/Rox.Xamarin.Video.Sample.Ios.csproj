@@ -125,11 +125,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Rox.Xamarin.Video.Ios, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Rox.Xamarin.Video.2.0.0-pre1\lib\Xamarin.iOS10\Rox.Xamarin.Video.Ios.dll</HintPath>
+      <HintPath>..\..\packages\Rox.Xamarin.Video.2.0.0-pre2\lib\Xamarin.iOS10\Rox.Xamarin.Video.Ios.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Rox.Xamarin.Video.Portable, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Rox.Xamarin.Video.2.0.0-pre1\lib\Xamarin.iOS10\Rox.Xamarin.Video.Portable.dll</HintPath>
+      <HintPath>..\..\packages\Rox.Xamarin.Video.2.0.0-pre2\lib\Xamarin.iOS10\Rox.Xamarin.Video.Portable.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
