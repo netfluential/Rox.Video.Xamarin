@@ -79,6 +79,21 @@ namespace RoxSample
         {
             get
             {
+                return _Volume;
+            }
+            set
+            {
+                _Volume = value;
+
+                OnPropertyChanged(nameof(Volume));
+                OnPropertyChanged(nameof(SliderVolume));
+            }
+        }
+
+        public double SliderVolume
+        {
+            get
+            {
                 return _Volume * 100;
             }
             set
@@ -93,6 +108,7 @@ namespace RoxSample
                 }
 
                 OnPropertyChanged(nameof(Volume));
+                OnPropertyChanged(nameof(SliderVolume));
             }
         }
 
@@ -105,15 +121,22 @@ namespace RoxSample
             }
         }
 
-        public ICommand VideoStateChangedCommand
+        public ICommand PropertyChangedCommand
         {
             get
             {
-                return new Command(() =>
+                return new Command<string>((propertyName) =>
                 {
-                    _LabelVideoStatus = VideoView.VideoState.ToString();
+                    switch (propertyName)
+                    {
+                        case nameof(VideoView.VideoState):
+                            {
+                                _LabelVideoStatus = VideoView.VideoState.ToString();
 
-                    OnPropertyChanged(nameof(LabelVideoStatus));
+                                OnPropertyChanged(nameof(LabelVideoStatus));
+                                break;
+                            }
+                    }
                 });
             }
         }

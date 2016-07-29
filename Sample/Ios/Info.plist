@@ -27,7 +27,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>Rox.fp.Xamarin.Video.Sample</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-60@2x.png</string>
@@ -46,7 +46,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleShortVersionString</key>
-	<string></string>
+	<string>1.0</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
