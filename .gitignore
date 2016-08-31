@@ -6,6 +6,16 @@ DTAR_*/
 [Bb]in/
 [Oo]bj/
 
+# Backup
+*.bak
+*.trn
+
+# Zip
+*.zip
+*.rar
+*.7z
+*.iso
+
 # Asp.Net Core
 *.lock.json
 *.nuget.props
@@ -23,6 +33,10 @@ TestResults/
 # Database project
 *.dbmdl
 Import Schema Logs/
+
+# Database
+*.dsn
+*.accdb
 
 # Nuget
 packages/
