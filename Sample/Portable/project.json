@@ -1,0 +1,12 @@
+﻿{
+  "dependencies": {
+    "Rox.Xamarin.Video": "2.1.0-pre3",
+    "Xamarin.Forms": "2.3.2.127"
+  },
+  "frameworks": {
+    ".NETPortable,Version=v4.5,Profile=Profile259": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}

@@ -1,8 +1,8 @@
 ﻿{
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
-    "Rox.Xamarin.Video": "2.0.0",
-    "Xamarin.Forms": "2.3.0.107"
+    "Rox.Xamarin.Video": "2.1.0-pre3",
+    "Xamarin.Forms": "2.3.2.127"
   },
   "frameworks": {
     "uap10.0": {}

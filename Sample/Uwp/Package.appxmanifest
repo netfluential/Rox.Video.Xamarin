@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="2ae3ce2c-ab87-4c0a-ba30-58e4d65f4ebf" Publisher="CN=Developer" Version="1.0.1.0" />
+  <Identity Name="3872DCCA-22C7-42E2-B16F-9F281D3287BA" Publisher="CN=Developer" Version="2.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="2ae3ce2c-ab87-4c0a-ba30-58e4d65f4ebf" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Rox.Xamarin.Video.Sample.Uwp</DisplayName>
@@ -14,7 +14,7 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="RoxSample.App">
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Rox.App">
       <uap:VisualElements DisplayName="Rox.Xamarin.Video.Sample.Uwp" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Rox.Xamarin.Video.Sample.Uwp" BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
         </uap:DefaultTile>

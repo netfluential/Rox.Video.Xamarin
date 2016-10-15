@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace RoxSample
+namespace Rox
 {
     public partial class VideoApplication
         : Application

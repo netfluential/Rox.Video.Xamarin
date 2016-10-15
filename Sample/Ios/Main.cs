@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace RoxSample
+namespace Rox
 {
     public class Application
     {

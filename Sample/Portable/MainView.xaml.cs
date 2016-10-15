@@ -1,7 +1,7 @@
 ﻿using Rox;
 using Xamarin.Forms;
 
-namespace RoxSample
+namespace Rox
 {
     public partial class MainView
         : ContentPage

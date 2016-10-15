@@ -1,4 +1,4 @@
-﻿namespace RoxSample
+﻿namespace Rox
 {
     public sealed partial class MainPage
     {

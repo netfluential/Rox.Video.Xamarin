@@ -1,26 +1,25 @@
-﻿using Rox;
+﻿using System;
 using System.ComponentModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace RoxSample
+namespace Rox
 {
     public class MainViewModel
         : INotifyPropertyChanged
     {
         private readonly VideoView VideoView;
+
         public MainViewModel(VideoView videoView)
         {
             VideoView = videoView;
         }
 
         private bool _AutoPlay = false;
+
         public bool AutoPlay
         {
-            get
-            {
-                return _AutoPlay;
-            }
+            get { return _AutoPlay; }
             set
             {
                 _AutoPlay = value;
@@ -29,58 +28,24 @@ namespace RoxSample
             }
         }
 
-        private bool _LoopPlay = false;
-        public bool LoopPlay
+        private bool _FullScreen = false;
+
+        public bool FullScreen
         {
-            get
-            {
-                return _LoopPlay;
-            }
+            get { return _FullScreen; }
             set
             {
-                _LoopPlay = value;
+                _FullScreen = value;
 
-                OnPropertyChanged(nameof(LoopPlay));
-            }
-        }
-
-        private bool _ShowController = false;
-        public bool ShowController
-        {
-            get
-            {
-                return _ShowController;
-            }
-            set
-            {
-                _ShowController = value;
-
-                OnPropertyChanged(nameof(ShowController));
-            }
-        }
-
-        private bool _Muted = false;
-        public bool Muted
-        {
-            get
-            {
-                return _Muted;
-            }
-            set
-            {
-                _Muted = value;
-
-                OnPropertyChanged(nameof(Muted));
+                OnPropertyChanged(nameof(FullScreen));
             }
         }
 
         private double _Volume = 1;
+
         public double Volume
         {
-            get
-            {
-                return _Volume;
-            }
+            get { return _Volume; }
             set
             {
                 _Volume = value;
@@ -92,15 +57,12 @@ namespace RoxSample
 
         public double SliderVolume
         {
-            get
-            {
-                return _Volume * 100;
-            }
+            get { return _Volume*100; }
             set
             {
                 try
                 {
-                    _Volume = value / 100;
+                    _Volume = value/100;
                 }
                 catch
                 {
@@ -112,12 +74,136 @@ namespace RoxSample
             }
         }
 
-        private string _LabelVideoStatus;
-        public string LabelVideoStatus
+        private bool _LoopPlay = false;
+
+        public bool LoopPlay
+        {
+            get { return _LoopPlay; }
+            set
+            {
+                _LoopPlay = value;
+
+                OnPropertyChanged(nameof(LoopPlay));
+            }
+        }
+
+        private bool _ShowController = false;
+
+        public bool ShowController
+        {
+            get { return _ShowController; }
+            set
+            {
+                _ShowController = value;
+
+                OnPropertyChanged(nameof(ShowController));
+            }
+        }
+
+        private bool _Muted = false;
+
+        public bool Muted
+        {
+            get { return _Muted; }
+            set
+            {
+                _Muted = value;
+
+                OnPropertyChanged(nameof(Muted));
+            }
+        }
+
+        private TimeSpan _Duration;
+
+        public TimeSpan Duration
+        {
+            get { return _Duration; }
+        }
+
+        public double SliderDuration
         {
             get
             {
-                return _LabelVideoStatus;
+                double totalMilliseconds = _Duration.TotalMilliseconds;
+                if (totalMilliseconds <= 0)
+                {
+                    totalMilliseconds = 1;
+                }
+                return totalMilliseconds;
+            }
+        }
+
+        private string _LabelVideoStatus;
+
+        public string LabelVideoStatus
+        {
+            get { return _LabelVideoStatus; }
+        }
+
+        private TimeSpan _Position;
+
+        public TimeSpan Position
+        {
+            get { return _Position; }
+            set
+            {
+                _Position = value;
+
+                OnPropertyChanged(nameof(Position));
+                OnPropertyChanged(nameof(SliderPosition));
+            }
+        }
+
+        public double SliderPosition
+        {
+            get { return _Position.TotalMilliseconds; }
+            set
+            {
+                try
+                {
+                    _Position = TimeSpan.FromMilliseconds(value);
+                }
+                catch
+                {
+                    _Position = TimeSpan.Zero;
+                }
+
+                OnPropertyChanged(nameof(Position));
+                OnPropertyChanged(nameof(SliderPosition));
+            }
+        }
+
+        private TimeSpan _PositionInterval = TimeSpan.FromMilliseconds(500);
+
+        public TimeSpan PositionInterval
+        {
+            get { return _PositionInterval; }
+            set
+            {
+                _PositionInterval = value;
+
+                OnPropertyChanged(nameof(PositionInterval));
+                OnPropertyChanged(nameof(EntryPositionInterval));
+            }
+        }
+
+        public string EntryPositionInterval
+        {
+            get { return _PositionInterval.TotalMilliseconds.ToString(); }
+            set
+            {
+                int positionIntervalMilliseconds;
+                if (int.TryParse(value, out positionIntervalMilliseconds))
+                {
+                    _PositionInterval = TimeSpan.FromMilliseconds(positionIntervalMilliseconds);
+                }
+                else
+                {
+                    _PositionInterval = TimeSpan.Zero;
+                }
+
+                OnPropertyChanged(nameof(PositionInterval));
+                OnPropertyChanged(nameof(EntryPositionInterval));
             }
         }
 
@@ -130,10 +216,18 @@ namespace RoxSample
                     switch (propertyName)
                     {
                         case nameof(VideoView.VideoState):
-                            {
-                                _LabelVideoStatus = VideoView.VideoState.ToString();
+                        {
+                            _LabelVideoStatus = VideoView.VideoState.ToString();
 
-                                OnPropertyChanged(nameof(LabelVideoStatus));
+                            OnPropertyChanged(nameof(LabelVideoStatus));
+                            break;
+                        }
+                        case nameof(VideoView.Duration):
+                            {
+                                _Duration = VideoView.Duration;
+
+                                OnPropertyChanged(nameof(Duration));
+                                OnPropertyChanged(nameof(SliderDuration));
                                 break;
                             }
                     }
@@ -142,12 +236,10 @@ namespace RoxSample
         }
 
         private string _Source = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4";
+
         public string EntrySource
         {
-            get
-            {
-                return _Source;
-            }
+            get { return _Source; }
             set
             {
                 _Source = value;
@@ -165,7 +257,7 @@ namespace RoxSample
                 try
                 {
                     ImageSourceConverter imageSourceConverter = new ImageSourceConverter();
-                    videoSource = (ImageSource)imageSourceConverter.ConvertFromInvariantString(_Source);
+                    videoSource = (ImageSource) imageSourceConverter.ConvertFromInvariantString(_Source);
                 }
                 catch
                 {

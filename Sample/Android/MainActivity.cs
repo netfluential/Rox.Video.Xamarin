@@ -2,7 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 
-namespace RoxSample
+namespace Rox
 {
     [Activity(Label = "VideoApplication", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity

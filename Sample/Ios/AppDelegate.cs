@@ -1,7 +1,7 @@
 ﻿using Foundation;
 using UIKit;
 
-namespace RoxSample
+namespace Rox
 {
     [Register("AppDelegate")]
     public partial class AppDelegate

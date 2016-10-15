@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage x:Class="RoxSample.MainView"
+<ContentPage x:Class="Rox.MainView"
         xmlns="http://xamarin.com/schemas/2014/forms"
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         xmlns:roxv="clr-namespace:Rox;assembly=Rox.Xamarin.Video.Portable">
@@ -11,21 +11,40 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <roxv:VideoView Grid.Column="0" Grid.Row="0" x:Name="VideoView" AutoPlay="{Binding AutoPlay}" LoopPlay="{Binding LoopPlay}" Muted="{Binding Muted}" Volume="{Binding Volume}" ShowController="{Binding ShowController}" Source="{Binding VideoSource}" PropertyChangedCommand="{Binding PropertyChangedCommand}" />
+        <roxv:VideoView Grid.Column="0" Grid.Row="0" x:Name="VideoView" AutoPlay="{Binding AutoPlay}" FullScreen="{Binding FullScreen, Mode=TwoWay}" LoopPlay="{Binding LoopPlay}" Muted="{Binding Muted, Mode=TwoWay}" Position="{Binding Position, Mode=TwoWay}" PositionInterval="{Binding PositionInterval, Mode=TwoWay}" ShowController="{Binding ShowController}" Volume="{Binding Volume, Mode=TwoWay}" Source="{Binding VideoSource}" PropertyChangedCommand="{Binding PropertyChangedCommand}" />
         <StackLayout Grid.Column="0" Grid.Row="1">
-            <Entry Text="{Binding EntrySource}" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" VerticalOptions="Center" TextColor="Gray" Text="Source:" />
+                <Entry Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding EntrySource}" />
+                <Label Grid.Column="0" Grid.Row="1" VerticalOptions="Center" TextColor="Gray" Text="Position:" />
+                <Slider Grid.Column="1" Grid.Row="1" Minimum="0" Maximum="{Binding SliderDuration, Mode=TwoWay}" Value="{Binding SliderPosition, Mode=TwoWay}" />
+                <Entry Grid.Column="2" Grid.Row="1" Text="{Binding EntryPositionInterval}" HorizontalTextAlignment="End" WidthRequest="100" VerticalOptions="Center" />
+            </Grid>
             <StackLayout Orientation="Horizontal">
                 <Button Text="Play" Command="{Binding PlayCommand}" />
                 <Button Text="Pause" Command="{Binding PauseCommand}" />
                 <Button Text="Stop" Command="{Binding StopCommand}" />
+                <Label VerticalOptions="Center" TextColor="Gray" Text="State:" />
+                <Label VerticalOptions="Center" TextColor="Red" Text="{Binding LabelVideoStatus}" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Show" VerticalOptions="Center" />
+                <Label TextColor="Gray" Text="Show:" VerticalOptions="Center" />
                 <Switch IsToggled="{Binding ShowController}" />
-                <Label Text="Auto" VerticalOptions="Center" />
+                <Label TextColor="Gray" Text="Auto:" VerticalOptions="Center" />
                 <Switch IsToggled="{Binding AutoPlay}" />
-                <Label Text="Loop" VerticalOptions="Center" />
+                <Label TextColor="Gray" Text="Loop:" VerticalOptions="Center" />
                 <Switch IsToggled="{Binding LoopPlay}" />
+                <Label TextColor="Gray" Text="Full:" VerticalOptions="Center" />
+                <Switch IsToggled="{Binding FullScreen, Mode=TwoWay}" />
             </StackLayout>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -37,12 +56,11 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Label Grid.Column="0" Grid.Row="0" Text="Mute" VerticalOptions="Center" />
-                <Switch Grid.Column="1" Grid.Row="0" IsToggled="{Binding Muted}" />
-                <Label Grid.Column="2" Grid.Row="0" Text="Volume" VerticalOptions="Center" />
-                <Slider Grid.Column="3" Grid.Row="0" Minimum="0" Maximum="100" Value="{Binding SliderVolume}" />
+                <Label Grid.Column="0" Grid.Row="0" TextColor="Gray" Text="Mute:" VerticalOptions="Center" />
+                <Switch Grid.Column="1" Grid.Row="0" IsToggled="{Binding Muted, Mode=TwoWay}" />
+                <Label Grid.Column="2" Grid.Row="0" TextColor="Gray" Text="Volume:" VerticalOptions="Center" />
+                <Slider Grid.Column="3" Grid.Row="0" Minimum="0" Maximum="100" Value="{Binding SliderVolume, Mode=TwoWay}" />
             </Grid>
-            <Label Text="{Binding LabelVideoStatus}" />
         </StackLayout>
     </Grid>
 </ContentPage>

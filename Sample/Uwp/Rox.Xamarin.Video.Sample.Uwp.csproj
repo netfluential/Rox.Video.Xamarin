@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{F92584D6-828A-465A-8720-AE9D67DEE9E3}</ProjectGuid>
+    <ProjectGuid>{A1A4CCFF-1691-43EF-9352-6481E15042CA}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RoxSample</RootNamespace>
+    <RootNamespace>Rox</RootNamespace>
     <AssemblyName>Rox.Xamarin.Video.Sample.Uwp</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
@@ -136,7 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Portable\Rox.Xamarin.Video.Sample.Portable.csproj">
-      <Project>{186ED57E-FDE7-4985-A5A6-619DEAA68386}</Project>
+      <Project>{3E06D134-E923-4AEF-8127-8CEF6995DC0A}</Project>
       <Name>Rox.Xamarin.Video.Sample.Portable</Name>
     </ProjectReference>
   </ItemGroup>
