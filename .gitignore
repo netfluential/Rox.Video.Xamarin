@@ -1,10 +1,21 @@
-# VS
-.vs/
+\.vs
+\.vscode
+\bin
+\obj
+
+# Android
+Resource.Designer.cs
+
+# # Compressed
+# *.bak
+# *.zip
+# *.rar
+# *.7z
+
+# # Old
 DTAR_*/
 *.suo
 *.user
-[Bb]in/
-[Oo]bj/
 
 # Backup
 *.bak
