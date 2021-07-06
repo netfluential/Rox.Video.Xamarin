@@ -8,9 +8,20 @@ Resource.Designer.cs
 
 # # Compressed
 # *.bak
+# *.trn
 # *.zip
 # *.rar
 # *.7z
+# *.iso
+
+# # Old
+# \packages
+# \[B|b]ack[U|u]p
+# *.csproj.user
+# *.lock.json
+# *.nuget.cache
+# *.nuget.props
+# *.nuget.targets
 
 # # Old
 DTAR_*/
