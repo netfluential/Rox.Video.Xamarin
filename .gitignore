@@ -1,10 +1,32 @@
-# VS
-.vs/
+\.vs
+\.vscode
+\bin
+\obj
+
+# Android
+Resource.Designer.cs
+
+# # Compressed
+# *.bak
+# *.trn
+# *.zip
+# *.rar
+# *.7z
+# *.iso
+
+# # Old
+# \packages
+# \[B|b]ack[U|u]p
+# *.csproj.user
+# *.lock.json
+# *.nuget.cache
+# *.nuget.props
+# *.nuget.targets
+
+# # Old
 DTAR_*/
 *.suo
 *.user
-[Bb]in/
-[Oo]bj/
 
 # Backup
 *.bak
