@@ -1,5 +1,7 @@
 ### Rox Video Control for Xamarin.Forms
 
+Rox Video Control provides the ability to view and control media files.
+
 | | Links |
 | --- | --- |
 | **Instructions** | [rox.tools/video](https://rox.tools/video/) |
