@@ -1,9 +1,12 @@
-# Rox Video Control for Xamarin.Forms
+### Rox Video Control for Xamarin.Forms
 
-Rox Video Control provides the ability to view and control media files.
+This repository contains the source code for the [Rox Video Control for Xamarin.Forms NuGet Package](https://www.nuget.org/packages/Rox.Xamarin.Video/).
 
-## NuGet for Rox.Xamarin.Video
+| | Useful Links |
+| --- | --- |
+| **Instructions** | [rox.tools/video](https://rox.tools/video/) |
+| **Sample** | [rox.gallery/control](https://rox.gallery/control/) |
+| **NuGet** | [Rox.Xamarin.Video](https://www.nuget.org/packages/Rox.Xamarin.Video/) |
 
-The Rox.Xamarin.Video NuGet can be found at:
-
-https://www.nuget.org/packages/Rox.Xamarin.Video/
+---
+Visit [airobo.software](https://airobo.software/) for more information.
