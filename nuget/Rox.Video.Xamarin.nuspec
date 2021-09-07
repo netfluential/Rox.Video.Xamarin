@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+	<metadata>
+		<id>Rox.Xamarin.Video</id>
+		<title>Rox Video for Xamarin.Forms</title>
+		<version>5.0.0-alpha1</version>
+		<repository type="git" url="https://github.com/ai-ro-bo/Rox.Video.Xamarin.git" branch="rel" />
+		<authors>AiRoBo Software</authors>
+		<license type="file">res\nuget-license.txt</license>
+		<projectUrl>https://rox.tools/video</projectUrl>
+		<icon>res\nuget-logo.png</icon>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<description>Rox Video for Xamarin.Forms plays videos with native platform controls.</description>
+		<readme>res\nuget-readme.md</readme>
+		<releaseNotes>
+[Version 1.0.0]
+* Created new solution and projects and reimplemented components on all platforms.
+* Changed licensed to MIT.
+* Provided source code in GitHub repository.
+* Created https://rox.tools/video/ instruction page.
+* Created skeleton https://rox.gallery/video/ sample page.
+
+[Build Configuration]
+* Visual Studio for Windows v16.11.2
+* Visual Studio for Mac v8.10.7.17
+* Windows 10 v21H1.19043.1110
+* macOS : Big Sur 11.5.2
+
+[Targets]
+* .NetStandard2.0
+		</releaseNotes>
+		<copyright>©2016-2021 AiRoBo Software</copyright>
+		<tags>rox video airobo rox.tools Xamarin.Forms</tags>
+		<dependencies>
+			<group targetFramework="netstandard2.0" />
+		</dependencies>
+	</metadata>
+	<files>
+		<!-- Resources -->
+		<file src="..\res\nuget-license.txt" target="res\nuget-license.txt" />
+		<file src="..\res\nuget-logo.png" target="res\nuget-logo.png" />
+		<file src="..\res\nuget-readme.md" target="res\nuget-readme.md" />
+
+		<!-- netstandard2.0 -->
+		<file src="..\src\Stub\bin\Release\netstandard2.0\Rox.Stub.dll" target="lib\netstandard2.0\Rox.Stub.dll" />
+		<file src="..\src\Stub\bin\Release\netstandard2.0\Rox.Stub.pdb" target="lib\netstandard2.0\Rox.Stub.pdb" />
+	</files>
+</package>
