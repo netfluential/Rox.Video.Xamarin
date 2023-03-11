@@ -1,3 +1,3 @@
 git clean -Xdf
 
-read -p "Press enter to exit"
+read -p "Press any key to exit"
